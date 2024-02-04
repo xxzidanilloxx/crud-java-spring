@@ -33,4 +33,16 @@ public class UsuarioController {
         UsuarioDTO result = service.insert(dados);
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<UsuarioDTO> update(@PathVariable Long id, @RequestBody UsuarioDTO dados){
+        UsuarioDTO result = service.update(id, dados);
+        return ResponseEntity.ok(result);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
