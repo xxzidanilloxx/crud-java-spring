@@ -1,6 +1,7 @@
 package com.danillo.crud.service;
 
 import com.danillo.crud.dto.UsuarioDTO;
+import com.danillo.crud.exception.RecordNotFoundException;
 import com.danillo.crud.model.Usuario;
 import com.danillo.crud.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UsuarioService {
 
     @Transactional
     public UsuarioDTO findById(@PathVariable Long id){
-        Usuario result = repository.findById(id).get();
+        Usuario result = repository.findById(id).orElseThrow(() -> new RecordNotFoundException(id));
         return new UsuarioDTO(result);
     }
 
@@ -43,7 +44,7 @@ public class UsuarioService {
 
     @Transactional
     public UsuarioDTO update(Long id, UsuarioDTO dados){
-        Usuario usuario = repository.findById(id).orElse(null);
+        Usuario usuario = repository.findById(id).orElseThrow(() -> new RecordNotFoundException(id));
 
         if(usuario != null){
             usuario.setId(dados.getId());
