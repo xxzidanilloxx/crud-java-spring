@@ -47,7 +47,6 @@ public class UsuarioService {
         Usuario usuario = repository.findById(id).orElseThrow(() -> new RecordNotFoundException(id));
 
         if(usuario != null){
-            usuario.setId(dados.getId());
             usuario.setNome(dados.getNome());
             usuario.setCpf(dados.getCpf());
             usuario.setEmail(dados.getEmail());
