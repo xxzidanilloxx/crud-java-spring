@@ -19,11 +19,40 @@ Este projeto utiliza [H2 Database](https://www.h2database.com/html/tutorial.html
 
 Aqui estão os endpoints disponíveis:
 
-- `GET localhost:8080/usuarios`: Retorna todas as pessoas cadastradas.
-- `GET localhost:8080/usuarios/{id}`: Retorna uma pessoa específica e os seus dados a partid do ID fornecido.
-- `POST localhost:8080/usuarios`: Cadastra uma nova pessoa com os dados fornecidos.
-- `PUT localhost:8080/usuarios/{id}`: Atualiza os dados de uma pessoa cadastrada a partir do ID fornecido.
-- `DELETE localhost:8080/usuarios/{id}`: Exclui os dados de uma pessoa cadastrada a partir do ID fornecido.
+### `POST localhost:8080/usuarios`
+Cadastra uma nova pessoa com os dados fornecidos.
+
+#### Exemplo do corpo da requisição (JSON):
+```JSON
+{
+  "id": null,
+  "nome": "James Gosling",
+  "cpf": "10111011100",
+  "email": "james@gmail.com"	
+}
+```
+
+### `GET localhost:8080/usuarios`
+Retorna todas as pessoas cadastradas.
+
+### `GET localhost:8080/usuarios/{id}`
+Retorna uma pessoa específica e os seus dados a partid do ID fornecido.
+
+### `PUT localhost:8080/usuarios/{id}`
+Atualiza os dados de uma pessoa cadastrada a partir do ID fornecido.
+
+#### Exemplo do corpo da requisição (JSON):
+```JSON
+{
+  "id": null,
+  "nome": "James Arthur Gosling",
+  "cpf": "10111011101",
+  "email": "jamesgosling@gmail.com"	
+}
+```
+
+### `DELETE localhost:8080/usuarios/{id}`
+Exclui os dados de uma pessoa cadastrada a partir do ID fornecido.
 
 ## :gear: Como executar o projeto
 
