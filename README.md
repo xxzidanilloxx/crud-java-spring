@@ -15,6 +15,21 @@ Este é um projeto simples que consiste no gerenciamento de informações de pes
 
 Este projeto utiliza [H2 Database](https://www.h2database.com/html/tutorial.html) como banco de dados.
 
+## :gear: Como executar o projeto
+
+Pré-requisitos: Java 17
+
+```bash
+# Clonar o repositório
+git clone https://github.com/xxzidanilloxx/crud-java-spring
+
+# Acessar a pasta do projeto
+cd crud-java-spring
+
+# Executar o projeto
+mvn spring-boot:run
+```
+
 ## :checkered_flag: Endpoints
 
 Aqui estão os endpoints disponíveis:
@@ -44,7 +59,6 @@ Atualiza os dados de uma pessoa cadastrada a partir do ID fornecido.
 #### Exemplo do corpo da requisição (JSON):
 ```JSON
 {
-  "id": null,
   "nome": "James Arthur Gosling",
   "cpf": "10111011101",
   "email": "jamesgosling@gmail.com"	
@@ -53,21 +67,6 @@ Atualiza os dados de uma pessoa cadastrada a partir do ID fornecido.
 
 ### `DELETE localhost:8080/usuarios/{id}`
 Exclui os dados de uma pessoa cadastrada a partir do ID fornecido.
-
-## :gear: Como executar o projeto
-
-Pré-requisitos: Java 17
-
-```bash
-# Clonar o repositório
-git clone https://github.com/xxzidanilloxx/crud-java-spring
-
-# Acessar a pasta do projeto
-cd crud-java-spring
-
-# Executar o projeto
-mvn spring-boot:run
-```
 
 ## :page_facing_up: Licença
 
