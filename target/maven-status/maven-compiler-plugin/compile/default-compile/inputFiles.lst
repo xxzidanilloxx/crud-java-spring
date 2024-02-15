@@ -1,6 +1,8 @@
 /home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/model/Usuario.java
 /home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/dto/UsuarioDTO.java
 /home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/repository/UsuarioRepository.java
+/home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/exception/RecordNotFoundException.java
 /home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/CrudApplication.java
+/home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/exception/GlobalExceptionHandler.java
 /home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/service/UsuarioService.java
 /home/danillo/wksp_github/crud-java-spring/src/main/java/com/danillo/crud/controller/UsuarioController.java

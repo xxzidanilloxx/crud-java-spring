@@ -1,6 +1,8 @@
 package com.danillo.crud.service;
 
 import com.danillo.crud.dto.UsuarioDTO;
+import com.danillo.crud.exception.CpfDuplicateException;
+import com.danillo.crud.exception.EmailDuplicateException;
 import com.danillo.crud.exception.RecordNotFoundException;
 import com.danillo.crud.model.Usuario;
 import com.danillo.crud.repository.UsuarioRepository;
@@ -31,6 +33,14 @@ public class UsuarioService {
 
     @Transactional
     public UsuarioDTO insert(UsuarioDTO dados){
+        if (repository.existsByCpf(dados.getCpf())) {
+            throw new CpfDuplicateException();
+        }
+
+        if (repository.existsByEmail(dados.getEmail())) {
+            throw new EmailDuplicateException();
+        }
+
         Usuario usuario = new Usuario();
 
         usuario.setId(dados.getId());
@@ -47,6 +57,14 @@ public class UsuarioService {
         Usuario usuario = repository.findById(id).orElseThrow(() -> new RecordNotFoundException(id));
 
         if(usuario != null){
+            if (repository.existsByCpfAndIdNot(dados.getCpf(), id)) {
+                throw new CpfDuplicateException();
+            }
+
+            if (repository.existsByEmailAndIdNot(dados.getEmail(), id)) {
+                throw new EmailDuplicateException();
+            }
+
             usuario.setNome(dados.getNome());
             usuario.setCpf(dados.getCpf());
             usuario.setEmail(dados.getEmail());
@@ -59,6 +77,7 @@ public class UsuarioService {
 
     @Transactional
     public void delete(Long id){
+        repository.findById(id).orElseThrow(() -> new RecordNotFoundException(id));
         repository.deleteById(id);
     }
 }
