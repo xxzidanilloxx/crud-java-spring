@@ -1,9 +1,9 @@
 package com.danillo.crud.repository;
 
-import com.danillo.crud.model.Usuario;
+import com.danillo.crud.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     boolean existsByCpf(Long cpf);
 

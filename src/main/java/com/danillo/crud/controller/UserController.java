@@ -1,7 +1,7 @@
 package com.danillo.crud.controller;
 
-import com.danillo.crud.dto.UsuarioDTO;
-import com.danillo.crud.service.UsuarioService;
+import com.danillo.crud.dto.UserDTO;
+import com.danillo.crud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,34 +10,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/usuarios")
+@RequestMapping(value = "/users")
 @CrossOrigin(origins = "*")
-public class UsuarioController {
+public class UserController {
 
     @Autowired
-    UsuarioService service;
+    UserService service;
 
     @GetMapping
-    public ResponseEntity<List<UsuarioDTO>> findAll(){
-        List<UsuarioDTO> result = service.findAll();
+    public ResponseEntity<List<UserDTO>> findAll(){
+        List<UserDTO> result = service.findAll();
         return ResponseEntity.ok(result);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<UsuarioDTO> findById(@PathVariable Long id){
-        UsuarioDTO result = service.findById(id);
+    public ResponseEntity<UserDTO> findById(@PathVariable Long id){
+        UserDTO result = service.findById(id);
         return ResponseEntity.ok(result);
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioDTO> insert(@RequestBody UsuarioDTO dados){
-        UsuarioDTO result = service.insert(dados);
+    public ResponseEntity<UserDTO> insert(@RequestBody UserDTO data){
+        UserDTO result = service.insert(data);
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UsuarioDTO> update(@PathVariable Long id, @RequestBody UsuarioDTO dados){
-        UsuarioDTO result = service.update(id, dados);
+    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody UserDTO data){
+        UserDTO result = service.update(id, data);
         return ResponseEntity.ok(result);
     }
 
