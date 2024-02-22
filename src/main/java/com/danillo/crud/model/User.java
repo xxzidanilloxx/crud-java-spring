@@ -12,15 +12,15 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "TB_USUARIO")
-public class Usuario {
+@Table(name = "TB_USER")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @Column(unique = true, nullable = false)
     private  Long cpf;
