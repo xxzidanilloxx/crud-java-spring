@@ -43,7 +43,8 @@ public class UserService {
         User user = new User();
 
         user.setId(data.getId());
-        user.setName(data.getName());
+        user.setFirstName(data.getFirstName());
+        user.setLastName(data.getLastName());
         user.setCpf(data.getCpf());
         user.setEmail(data.getEmail());
 
@@ -64,7 +65,8 @@ public class UserService {
                 throw new EmailDuplicateException();
             }
 
-            user.setName(data.getName());
+            user.setFirstName(data.getFirstName());
+            user.setLastName(data.getLastName());
             user.setCpf(data.getCpf());
             user.setEmail(data.getEmail());
 

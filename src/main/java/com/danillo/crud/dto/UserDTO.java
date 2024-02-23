@@ -11,7 +11,12 @@ public class UserDTO {
     @NotBlank(message = "Campo não informado")
     @Pattern(regexp = "^[A-Z][a-z]*$",
             message = "Informe o seu primeiro nome com a primeira letra maiúscula e sem espaços")
-    private String name;
+    private String firstName;
+
+    @NotBlank(message = "Campo não informado")
+    @Pattern(regexp = "^[A-Z][a-z]*$",
+            message = "Informe o seu último nome com a primeira letra maiúscula e sem espaços")
+    private String lastName;
 
     @NotNull(message = "Campo não informado")
     @Pattern(regexp = "\\d{11}", message = "Digite um CPF válido")
@@ -27,7 +32,8 @@ public class UserDTO {
 
     public UserDTO(User data){
         id = data.getId();
-        name = data.getName();
+        firstName = data.getFirstName();
+        lastName = data.getLastName();
         cpf = data.getCpf();
         email = data.getEmail();
     }
