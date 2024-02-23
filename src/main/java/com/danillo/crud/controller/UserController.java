@@ -2,9 +2,11 @@ package com.danillo.crud.controller;
 
 import com.danillo.crud.dto.UserDTO;
 import com.danillo.crud.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/users")
 @CrossOrigin(origins = "*")
+@Validated
 public class UserController {
 
     @Autowired
@@ -30,13 +33,13 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDTO> insert(@RequestBody UserDTO data){
+    public ResponseEntity<UserDTO> insert(@RequestBody @Valid UserDTO data){
         UserDTO result = service.insert(data);
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody UserDTO data){
+    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody @Valid UserDTO data){
         UserDTO result = service.update(id, data);
         return ResponseEntity.ok(result);
     }
