@@ -34,7 +34,7 @@ mvn spring-boot:run
 
 Aqui estão os endpoints disponíveis:
 
-### `POST localhost:8080/users
+### `POST localhost:8080/users`
 Cadastra um novo usuário com os dados fornecidos.
 
 #### Exemplo do corpo da requisição (JSON):
@@ -48,8 +48,8 @@ Cadastra um novo usuário com os dados fornecidos.
 }
 ```
 
-### `GET localhost:8080/users
-Retorna todos os usuários cadastradas.
+### `GET localhost:8080/users`
+Retorna todos os usuários cadastrados.
 
 ### `GET localhost:8080/users/{id}`
 Retorna um usuário específico e os seus dados a partid do ID fornecido.
