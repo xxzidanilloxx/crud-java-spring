@@ -6,10 +6,10 @@ Este é um projeto simples que consiste no gerenciamento de informações de pes
 
 ## :hammer_and_wrench: Tenologias utilizadas
 
-![java](https://github.com/xxzidanilloxx/xxzidanilloxx/assets/111617208/0af15eed-7d91-469c-87af-abb5e4ba7dc4)
-![spring](https://github.com/xxzidanilloxx/xxzidanilloxx/assets/111617208/ffab4823-af20-4904-9854-b84d8c144977)
-![hibernate](https://github.com/xxzidanilloxx/xxzidanilloxx/assets/111617208/db2acb5e-1cb6-40ad-8d64-05079ecdda18)
-![maven](https://github.com/xxzidanilloxx/xxzidanilloxx/assets/111617208/91902391-c384-4718-a6ff-527fead23667)
+![java](https://github.com/xxzidanilloxx/crud-java-spring/assets/111617208/c4c4a890-397c-479f-a2ed-99e095a02118)
+![spring](https://github.com/xxzidanilloxx/crud-java-spring/assets/111617208/3f70ba98-b9c9-48a3-a508-132bc5371287)
+![maven](https://github.com/xxzidanilloxx/crud-java-spring/assets/111617208/feff8c3b-1d78-4a0b-bce8-ec3484e73eac)
+![hibernate](https://github.com/xxzidanilloxx/crud-java-spring/assets/111617208/8aed8105-6b83-40af-a30b-df1e97982ea2)
 
 ## :file_cabinet: Banco de dados
 
@@ -34,34 +34,34 @@ mvn spring-boot:run
 
 Aqui estão os endpoints disponíveis:
 
-### `POST localhost:8080/usuarios`
+### `POST localhost:8080/users
 Cadastra uma nova pessoa com os dados fornecidos.
 
 #### Exemplo do corpo da requisição (JSON):
 ```JSON
 {
-  "id": null,
-  "nome": "James Gosling",
-  "cpf": "10111011100",
-  "email": "james@gmail.com"	
+    "id": null,
+    "name": "James",
+    "cpf": "11111001011",
+    "email":"james@gmail.com"
 }
 ```
 
-### `GET localhost:8080/usuarios`
+### `GET localhost:8080/users
 Retorna todas as pessoas cadastradas.
 
-### `GET localhost:8080/usuarios/{id}`
+### `GET localhost:8080/users/{id}`
 Retorna uma pessoa específica e os seus dados a partid do ID fornecido.
 
-### `PUT localhost:8080/usuarios/{id}`
+### `PUT localhost:8080/users/{id}`
 Atualiza os dados de uma pessoa cadastrada a partir do ID fornecido.
 
 #### Exemplo do corpo da requisição (JSON):
 ```JSON
 {
-  "nome": "James Arthur Gosling",
-  "cpf": "10111011101",
-  "email": "jamesgosling@gmail.com"	
+    "name": "James",
+    "cpf": "11111001011",
+    "email":"james@gmail.com"
 }
 ```
 
