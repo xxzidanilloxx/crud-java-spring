@@ -1,8 +1,8 @@
-# API REST - Cadastro de pessoas
+# API REST - CRUD
 
 ## :books: Sobre o Projeto
 
-Este é um projeto simples que consiste no gerenciamento de informações de pessoas através de operações CRUD (Create, Read, Update, Delete).
+Este é um projeto simples que consiste no gerenciamento de informações de usuários por intermédio de operações CRUD (Create, Read, Update, Delete).
 
 ## :hammer_and_wrench: Tenologias utilizadas
 
@@ -35,38 +35,40 @@ mvn spring-boot:run
 Aqui estão os endpoints disponíveis:
 
 ### `POST localhost:8080/users
-Cadastra uma nova pessoa com os dados fornecidos.
+Cadastra um novo usuário com os dados fornecidos.
 
 #### Exemplo do corpo da requisição (JSON):
 ```JSON
 {
     "id": null,
-    "name": "James",
+    "firstName": "James",
+    "lastName": "Gosling",
     "cpf": "11111001011",
     "email":"james@gmail.com"
 }
 ```
 
 ### `GET localhost:8080/users
-Retorna todas as pessoas cadastradas.
+Retorna todos os usuários cadastradas.
 
 ### `GET localhost:8080/users/{id}`
-Retorna uma pessoa específica e os seus dados a partid do ID fornecido.
+Retorna um usuário específico e os seus dados a partid do ID fornecido.
 
 ### `PUT localhost:8080/users/{id}`
-Atualiza os dados de uma pessoa cadastrada a partir do ID fornecido.
+Atualiza os dados de um usuário cadastrado a partir do ID fornecido.
 
 #### Exemplo do corpo da requisição (JSON):
 ```JSON
 {
-    "name": "James",
+    "firstName": "James",
+    "lastName": "Gosling",
     "cpf": "11111001011",
     "email":"james@gmail.com"
 }
 ```
 
 ### `DELETE localhost:8080/usuarios/{id}`
-Exclui os dados de uma pessoa cadastrada a partir do ID fornecido.
+Exclui os dados de um usuário cadastrado a partir do ID fornecido.
 
 ## :page_facing_up: Licença
 
