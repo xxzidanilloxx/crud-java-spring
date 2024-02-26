@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -27,6 +29,9 @@ public class User {
 
     @Column(unique = true, nullable = false)
     private  String cpf;
+
+    @Column(nullable = false)
+    private LocalDate birthDate;
 
     @Column(unique = true, nullable = false)
     private String email;

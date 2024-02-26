@@ -46,6 +46,7 @@ public class UserService {
         user.setFirstName(data.getFirstName());
         user.setLastName(data.getLastName());
         user.setCpf(data.getCpf());
+        user.setBirthDate(data.getBirthDate());
         user.setEmail(data.getEmail());
 
         User result = repository.save(user);
@@ -68,6 +69,7 @@ public class UserService {
             user.setFirstName(data.getFirstName());
             user.setLastName(data.getLastName());
             user.setCpf(data.getCpf());
+            user.setBirthDate(data.getBirthDate());
             user.setEmail(data.getEmail());
 
             User result = repository.save(user);
