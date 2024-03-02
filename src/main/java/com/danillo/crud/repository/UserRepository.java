@@ -1,6 +1,6 @@
 package com.danillo.crud.repository;
 
-import com.danillo.crud.model.User;
+import com.danillo.crud.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

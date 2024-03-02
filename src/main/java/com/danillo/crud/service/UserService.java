@@ -4,7 +4,7 @@ import com.danillo.crud.dto.UserDTO;
 import com.danillo.crud.exception.CpfDuplicateException;
 import com.danillo.crud.exception.EmailDuplicateException;
 import com.danillo.crud.exception.RecordNotFoundException;
-import com.danillo.crud.model.User;
+import com.danillo.crud.entity.User;
 import com.danillo.crud.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,6 +48,7 @@ public class UserService {
         user.setCpf(data.getCpf());
         user.setBirthDate(data.getBirthDate());
         user.setEmail(data.getEmail());
+        user.setAddressList(data.getAddressList());
 
         User result = repository.save(user);
         return new UserDTO(result);
@@ -71,6 +72,7 @@ public class UserService {
             user.setCpf(data.getCpf());
             user.setBirthDate(data.getBirthDate());
             user.setEmail(data.getEmail());
+            user.setAddressList(data.getAddressList());
 
             User result = repository.save(user);
             return new UserDTO(result);
