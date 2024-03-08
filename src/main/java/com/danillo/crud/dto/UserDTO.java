@@ -23,14 +23,13 @@ public class UserDTO {
             message = "Informe o sobrenome com a primeira letra maiúscula e sem espaços")
     private String lastName;
 
-    @NotNull(message = "Campo não informado")
+    @NotBlank(message = "Campo não informado")
     @Pattern(regexp = "\\d{11}", message = "Digite um CPF válido")
     private String cpf;
 
-    @NotNull(message = "Campo não informado")
-    @Past(message = "Data inválida.")
+    @NotBlank(message = "Campo não informado")
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate birthDate;
+    private String birthDate;
 
     @NotBlank(message = "Campo não informado")
     @Email(message = "Digite um email válido", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")

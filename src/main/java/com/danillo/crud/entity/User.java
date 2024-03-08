@@ -32,7 +32,7 @@ public class User {
     private  String cpf;
 
     @Column(nullable = false)
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Column(unique = true, nullable = false)
     private String email;
