@@ -14,12 +14,12 @@ public class UserDTO {
     private Long id;
 
     @NotBlank(message = "Campo não informado")
-    @Pattern(regexp = "^[A-Z][a-z]*$",
+    @Pattern(regexp = "^[A-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]{1}[a-záàâãéèêíïóôõöúçñ]{1,}$",
             message = "Informe o primeiro nome com a primeira letra maiúscula e sem espaços")
     private String firstName;
 
     @NotBlank(message = "Campo não informado")
-    @Pattern(regexp = "^[A-Z][a-z]*$",
+    @Pattern(regexp = "^[A-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]{1}[a-záàâãéèêíïóôõöúçñ]{1,}$",
             message = "Informe o sobrenome com a primeira letra maiúscula e sem espaços")
     private String lastName;
 
