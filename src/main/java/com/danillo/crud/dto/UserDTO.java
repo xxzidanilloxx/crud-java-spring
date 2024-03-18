@@ -1,12 +1,15 @@
 package com.danillo.crud.dto;
 
-import com.danillo.crud.entity.Address;
 import com.danillo.crud.entity.User;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -35,7 +38,9 @@ public class UserDTO {
     @Email(message = "Digite um email válido", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
     private String email;
 
-    private List<Address> addressList;
+    @Valid
+    @NotEmpty(message = "A lista de endereços não pode estar vazia")
+    private List<AddressDTO> addressList = new ArrayList<>();
 
     public UserDTO(){
 
@@ -48,6 +53,6 @@ public class UserDTO {
         cpf = data.getCpf();
         birthDate = data.getBirthDate();
         email = data.getEmail();
-        addressList = data.getAddressList();
+        addressList = (AddressDTO.toDto(data.getAddressList()));
     }
 }

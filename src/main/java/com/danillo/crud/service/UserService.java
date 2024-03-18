@@ -1,6 +1,7 @@
 package com.danillo.crud.service;
 
 import com.danillo.crud.dto.UserDTO;
+import com.danillo.crud.entity.Address;
 import com.danillo.crud.exception.CpfDuplicateException;
 import com.danillo.crud.exception.EmailDuplicateException;
 import com.danillo.crud.exception.RecordNotFoundException;
@@ -48,7 +49,7 @@ public class UserService {
         user.setCpf(data.getCpf());
         user.setBirthDate(data.getBirthDate());
         user.setEmail(data.getEmail());
-        user.setAddressList(data.getAddressList());
+        user.setAddressList(Address.toEntity(data.getAddressList()));
 
         User result = repository.save(user);
         return new UserDTO(result);
@@ -72,7 +73,8 @@ public class UserService {
             user.setCpf(data.getCpf());
             user.setBirthDate(data.getBirthDate());
             user.setEmail(data.getEmail());
-            user.setAddressList(data.getAddressList());
+            List<Address> addressList = Address.toEntity(data.getAddressList());
+            user.setAddressList(addressList);
 
             User result = repository.save(user);
             return new UserDTO(result);

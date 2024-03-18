@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 public class AddressDTO {
     private Long id;
@@ -35,5 +37,11 @@ public class AddressDTO {
         district = data.getDistrict();
         city = data.getCity();
         state = data.getState();
+    }
+
+    public static List<AddressDTO> toDto(List<Address> address){
+        return address.stream()
+                .map(x -> new AddressDTO(x))
+                .toList();
     }
 }
