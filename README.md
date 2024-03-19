@@ -46,9 +46,10 @@ Cadastra um novo usuário com os dados fornecidos.
     "cpf": "01234567890",
     "birthDate":"22-09-1994",
     "email":"frodo@gmail.com",
+    "phoneNumber": "(00) 00000-0000",
     "addressList": [
         {
-        "id": null,
+        "id":null,
         "street":"Rua Gustavo Rico Toro",
         "number": 430,	
         "district":"Vista Verde",
@@ -77,14 +78,15 @@ Atualiza os dados de um usuário cadastrado a partir do ID fornecido.
     "cpf": "01234567890",
     "birthDate":"22-09-1994",
     "email":"frodo@outlook.com",
+    "phoneNumber": "(00) 00000-0000",
     "addressList": [
         {
         "id": 1,
-        "street":"Avenida Nove de Julho",
+        "street": "Avenida Nove de Julho",
         "number": 120,	
-        "district":"Vila Adyana",
-        "city":"São José dos Campos",
-        "state":"São Paulo"
+        "district": "Vila Adyana",
+        "city": "São José dos Campos",
+        "state": "São Paulo"
         }
     ]
 }
