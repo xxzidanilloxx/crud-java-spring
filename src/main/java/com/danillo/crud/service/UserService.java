@@ -4,6 +4,7 @@ import com.danillo.crud.dto.UserDTO;
 import com.danillo.crud.entity.Address;
 import com.danillo.crud.exception.CpfDuplicateException;
 import com.danillo.crud.exception.EmailDuplicateException;
+import com.danillo.crud.exception.PhoneNumberDuplicateException;
 import com.danillo.crud.exception.RecordNotFoundException;
 import com.danillo.crud.entity.User;
 import com.danillo.crud.repository.UserRepository;
@@ -41,6 +42,10 @@ public class UserService {
             throw new EmailDuplicateException();
         }
 
+        if (repository.existsByPhoneNumber(data.getPhoneNumber())) {
+            throw new PhoneNumberDuplicateException();
+        }
+
         User user = new User();
 
         user.setId(data.getId());
@@ -49,6 +54,7 @@ public class UserService {
         user.setCpf(data.getCpf());
         user.setBirthDate(data.getBirthDate());
         user.setEmail(data.getEmail());
+        user.setPhoneNumber(data.getPhoneNumber());
         user.setAddressList(Address.toEntity(data.getAddressList()));
 
         User result = repository.save(user);
@@ -68,11 +74,16 @@ public class UserService {
                 throw new EmailDuplicateException();
             }
 
+            if (repository.existsByPhoneNumberAndIdNot(data.getPhoneNumber(), id)) {
+                throw new PhoneNumberDuplicateException();
+            }
+
             user.setFirstName(data.getFirstName());
             user.setLastName(data.getLastName());
             user.setCpf(data.getCpf());
             user.setBirthDate(data.getBirthDate());
             user.setEmail(data.getEmail());
+            user.setPhoneNumber(data.getPhoneNumber());
             List<Address> addressList = Address.toEntity(data.getAddressList());
             user.setAddressList(addressList);
 

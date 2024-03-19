@@ -2,6 +2,7 @@ package com.danillo.crud.infra;
 
 import com.danillo.crud.exception.CpfDuplicateException;
 import com.danillo.crud.exception.EmailDuplicateException;
+import com.danillo.crud.exception.PhoneNumberDuplicateException;
 import com.danillo.crud.exception.RecordNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EmailDuplicateException.class)
     private ResponseEntity<RestErrorMessage> emailDuplicateHandler(EmailDuplicateException exception){
+        RestErrorMessage response = new RestErrorMessage(HttpStatus.BAD_REQUEST, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    }
+
+    @ExceptionHandler(PhoneNumberDuplicateException.class)
+    private ResponseEntity<RestErrorMessage> phoneNumberDuplicateHandler(PhoneNumberDuplicateException exception){
         RestErrorMessage response = new RestErrorMessage(HttpStatus.BAD_REQUEST, exception.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
