@@ -41,10 +41,21 @@ Cadastra um novo usuário com os dados fornecidos.
 ```JSON
 {
     "id": null,
-    "firstName": "James",
-    "lastName": "Gosling",
-    "cpf": "11111001011",
-    "email":"james@gmail.com"
+    "firstName": "Frodo",
+    "lastName": "Baggins",
+    "cpf": "01234567890",
+    "birthDate":"22-09-1994",
+    "email":"frodo@gmail.com",
+    "addressList": [
+        {
+        "id": null,
+        "street":"Rua Gustavo Rico Toro",
+        "number": 430,	
+        "district":"Vista Verde",
+        "city":"São José dos Campos",
+        "state":"São Paulo"
+        }
+    ]
 }
 ```
 
@@ -60,10 +71,22 @@ Atualiza os dados de um usuário cadastrado a partir do ID fornecido.
 #### Exemplo do corpo da requisição (JSON):
 ```JSON
 {
-    "firstName": "James",
-    "lastName": "Gosling",
-    "cpf": "11111001011",
-    "email":"james@gmail.com"
+    "id": null,
+    "firstName": "Frodo",
+    "lastName": "Baggins",
+    "cpf": "01234567890",
+    "birthDate":"22-09-1994",
+    "email":"frodo@outlook.com",
+    "addressList": [
+        {
+        "id": 1,
+        "street":"Avenida Nove de Julho",
+        "number": 120,	
+        "district":"Vila Adyana",
+        "city":"São José dos Campos",
+        "state":"São Paulo"
+        }
+    ]
 }
 ```
 
