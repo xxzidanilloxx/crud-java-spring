@@ -44,7 +44,8 @@ Cadastra um novo usuário com os dados fornecidos.
     "firstName": "Frodo",
     "lastName": "Baggins",
     "cpf": "01234567890",
-    "birthDate":"22-09-1994",
+    "birthDate": "22-09-1994",
+    "occupation": "Desenvolvedor de Software",
     "email":"frodo@gmail.com",
     "phoneNumber": "(00) 00000-0000",
     "addressList": [
@@ -77,6 +78,7 @@ Atualiza os dados de um usuário cadastrado a partir do ID fornecido.
     "lastName": "Baggins",
     "cpf": "01234567890",
     "birthDate":"22-09-1994",
+    "occupation": "Desenvolvedor de Software",
     "email":"frodo@outlook.com",
     "phoneNumber": "(00) 00000-0000",
     "addressList": [
